@@ -15,7 +15,7 @@ jobs:
       - name: Build
         run: msbuild /p:Configuration=${{ env.BUILD_PROFILE }}
       - name: See folder struct
-        run: tree
+        run: tree /F
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v3
         with:
