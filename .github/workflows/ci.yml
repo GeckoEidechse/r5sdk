@@ -36,4 +36,4 @@ jobs:
         with:
           name: artifacts
           path: |
-            x64/${{ env.BUILD_PROFILE }}/*.*
+            game/*.*
