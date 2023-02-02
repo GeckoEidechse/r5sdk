@@ -14,26 +14,9 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
       - name: Build
         run: msbuild /p:Configuration=${{ env.BUILD_PROFILE }}
-      - name: See folder struct
-        run: tree /F
-      - name: See folder struct (root1)
-        run: |
-          cd ..
-          tree /F
-      - name: See folder struct (root2)
-        run: |
-          cd ..
-          cd ..
-          tree /F
-      - name: See folder struct (root3)
-        run: |
-          cd ..
-          cd ..
-          cd ..
-          tree /F
-      - name: Upload Build Artifact
+      - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: artifacts
+          name: build-artifacts
           path: |
             game/*.*
