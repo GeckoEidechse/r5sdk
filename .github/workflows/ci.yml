@@ -16,8 +16,19 @@ jobs:
         run: msbuild /p:Configuration=${{ env.BUILD_PROFILE }}
       - name: See folder struct
         run: tree /F
-      - name: See folder struct
+      - name: See folder struct (root1)
         run: |
+          cd ..
+          tree /F
+      - name: See folder struct (root2)
+        run: |
+          cd ..
+          cd ..
+          tree /F
+      - name: See folder struct (root3)
+        run: |
+          cd ..
+          cd ..
           cd ..
           tree /F
       - name: Upload Build Artifact
